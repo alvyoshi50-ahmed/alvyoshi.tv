@@ -1,0 +1,4 @@
+- name: Build with Buildozer
+    uses: ArtemSBulgakov/buildozer-action@v1
+    with:
+      buildozer_version: master
