@@ -8,10 +8,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install dependencies
+    - name: Install 32-bit architecture and dependencies
       run: |
+        sudo dpkg --add-architecture i386
         sudo apt-get update
-        sudo apt-get install -y python3-setuptools python3-pip openjdk-17-jdk unzip
+        sudo apt-get install -y build-essential ccache git zlib1g-dev python3 python3-pip openjdk-17-jdk unzip libncurses5:i386 libstdc++6:i386 libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa:i386
 
     - name: Install buildozer
       run: pip3 install buildozer
